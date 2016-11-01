@@ -1,0 +1,16 @@
+<h1>Listing events</h1>
+<%= link_to 'New event', new_event_path %>
+<p></p>
+
+  <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.text %></td>
+        <td><%= link_to 'Show', event_path(event) %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+  <% end %>
+</table>
+<p></p>
+<%= link_to 'Home', root_path %>
