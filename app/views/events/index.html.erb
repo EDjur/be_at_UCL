@@ -4,13 +4,12 @@
 
   <% @events.each do |event| %>
       <tr>
-        <td><%= event.title %></td>
-        <td><%= event.text %></td>
+        <td><%= event.title %></td><br>
+        <td><%= event.text %></td><br>
         <td><%= link_to 'Show', event_path(event) %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      </tr>
+      </tr><br><br>
   <% end %>
-</table>
 <p></p>
 <%= link_to 'Home', root_path %>
