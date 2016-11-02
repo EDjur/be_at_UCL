@@ -2,79 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*
- * Globals
- */
-
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/*
- * Base structure
- */
 
 html,
-body {
+body,
+header,
+.view {
   height: 100%;
 }
+/* Navigation*/
 
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 30px;
-}
-
-
-/*
- * Header
- */
-.masthead-brand {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  float: left;
-  position: fixed;
-  top: 0;
-}
-
-/* Start the vertical centering */
-.site-wrapper-inner {
-  vertical-align: middle;
-}
-
-
-
-// @media basically implies an if statement. I.e., if the media which is viewing the page has a min width of 992, then do this:
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #2E2E2E;
   }
+}
+
+.full-bg-img {
+  color: #fff;
+}
+
+.view {
+  background: url("http://mdbootstrap.com/images/regular/people/img%20(63).jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
