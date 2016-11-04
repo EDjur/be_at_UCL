@@ -28,6 +28,9 @@ gem 'autoprefixer-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Database cleaner
+gem 'database_cleaner' # you might want to limit this to the dev and staging group
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
