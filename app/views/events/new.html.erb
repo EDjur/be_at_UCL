@@ -1,5 +1,44 @@
-<h1>New Event</h1>
+<!--Navbar-->
+<nav class="navbar navbar-dark bg-primary">
 
-<%= render 'form' %>
+  <div class="container">
 
-<%= link_to 'Back', events_path %>
+    <!--Navbar Brand-->
+    <a class="navbar-brand">Navbar</a>
+    <!--Links-->
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Search</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Profile</a>
+      </li>
+      <li class="nav-item btn-group">
+      </li>
+    </ul>
+    <!--Search form-->
+    <form class="form-inline">
+      <input class="form-control" type="text" placeholder="Search">
+    </form>
+
+  </div>
+
+</nav>
+<!--/.Navbar-->
+<br><br>
+
+<!--Jumbotron-->
+<div class="jumbotron-col-lg-6-col-centered">
+  <h1 class="h1-responsive">New Event</h1>
+  <p class="lead">Blabla create your event with a lit title and decent description</p>
+  <hr class="my-2">
+  <%= render 'form' %>
+
+  <%= link_to 'Back', events_path %>
+
+
+</div>
+<!--/.Jumbotron-->
