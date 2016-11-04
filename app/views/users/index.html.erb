@@ -1,0 +1,14 @@
+<h1>Listing users</h1>
+<p></p>
+
+<% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td><br>
+      <td><%= user.email %></td><br>
+      <td><%= link_to 'Show', event_path(event) %></td>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr><br><br>
+<% end %>
+<p></p>
+<%= link_to 'Home', root_path %>
