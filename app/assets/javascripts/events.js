@@ -2,11 +2,11 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org///
 
-
+var event_street, event_housenumber, event_city, google_maps_object;
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -33.8688, lng: 151.2195},
+        center: {lat: 51.5174, lng: -0.12},
         zoom: 13
     });
     var input = /** @type {!HTMLInputElement} */(
@@ -62,20 +62,36 @@ function initMap() {
 
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
         infowindow.open(map, marker);
+
+        // parse the json to retrieve street, number and city of the event location
+        for (i =0; i < place.address_components.length; i++) {
+            console.log("this is i: ", i);
+            if (place.address_components[i]["types"]["0"] == "route") {
+                console.log("hi2")
+                event_street = place.address_components[i]["long_name"]
+            }
+            if (place.address_components[i]["types"]["0"] == "street_number"){
+                event_housenumber = place.address_components[i]["long_name"]
+            }
+            if (place.address_components[i]["types"]["0"] == "locality"){
+                event_city = place.address_components[i]["long_name"]
+            }
+        }
+
+        // might be able to display this using the Google Maps API on events pages
+        google_maps_object = place.address_components;
+
+        // test that street, number and city are correct
+        console.log("street: ", event_street);
+        console.log("number: ", event_housenumber);
+        console.log("city: ", event_city);
+
+
     });
 
-    // Sets a listener on a radio button to change the filter type on Places
-    // Autocomplete.
-    function setupClickListener(id, types) {
-        var radioButton = document.getElementById(id);
-        radioButton.addEventListener('click', function() {
-            autocomplete.setTypes(types);
-        });
-    }
 
-    setupClickListener('changetype-all', []);
-    setupClickListener('changetype-address', ['address']);
-    setupClickListener('changetype-establishment', ['establishment']);
-    setupClickListener('changetype-geocode', ['geocode']);
+
 }
+
+
 
