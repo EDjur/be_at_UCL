@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
 
   def index
-    @user = Event.all
+    @users = User.all
+  end
+
+  def new
+    @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save # returns false if invalid
-      @events = Event.all
+      @user= User.all
       redirect_to '/'
     else
       render 'errors'
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
