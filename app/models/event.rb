@@ -1,6 +1,5 @@
 class Event < ApplicationRecord
   has_many :comments, dependent: :destroy
-  validates :title, presence: true
   # for length specification use this syntax
-  validates :title, presence: true, length: { minimum: 5}
+  validates :title, :text, presence: true, length: { minimum: 5, maximum: 2000}
 end
