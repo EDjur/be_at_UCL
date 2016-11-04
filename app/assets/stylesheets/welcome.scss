@@ -11,12 +11,6 @@ header,
 }
 /* Navigation*/
 
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #2E2E2E;
-  }
-}
-
 .full-bg-img {
   color: #fff;
 }
@@ -27,4 +21,8 @@ header,
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.navbar {
+  margin-bottom: 0;
 }

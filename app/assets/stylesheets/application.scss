@@ -15,10 +15,6 @@
  *=require_self
  */
 
- /* style.css
- * This file provides css styles.
- */
-
 body, html {
   background-color: #ffffff;
   width: 100%;
@@ -31,6 +27,30 @@ body, html {
 
 a:hover {
   text-decoration: underline;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+  /* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
 }
 
 
