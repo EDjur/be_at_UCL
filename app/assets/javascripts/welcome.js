@@ -15,8 +15,6 @@ ready = function () {
     $('#signup-modal').on('submit', function() {
         $('#addListItem').modal('hide');
     });
-
-
 };
 
 $(document).ready(ready);

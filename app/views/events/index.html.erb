@@ -1,18 +1,64 @@
-<h1>Listing events</h1>
-<p></p>
+<!--Navbar-->
+<nav class="navbar navbar-dark bg-primary">
 
-<% @events.each do |event| %>
-    <tr>
-      <td><%= event.title %></td>
-      <br>
-      <td><%= event.text %></td>
-      <br>
-      <td><%= link_to 'Show', event_path(event) %></td>
-      <td><%= link_to 'Edit', edit_event_path(event) %></td>
-      <td><%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-    </tr><br><br>
-<% end %>
+
+  <div class="container">
+
+      <!--Navbar Brand-->
+      <a class="navbar-brand">Navbar</a>
+      <!--Links-->
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Pricing</a>
+        </li>
+        <li class="nav-item btn-group">
+          <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <a class="dropdown-item">Action</a>
+            <a class="dropdown-item">Another action</a>
+            <a class="dropdown-item">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <!--Search form-->
+      <form class="form-inline">
+        <input class="form-control" type="text" placeholder="Search">
+      </form>
+
+  </div>
+
+</nav>
+<!--/.Navbar-->
+
+<!--Jumbotron-->
+<div class="jumbotron col-lg-6 col-centered">
+  <h1 class="h1-responsive">Listing Events</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-2">
+  <% @events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <br>
+        <td><%= event.text %></td>
+        <br>
+        <td><%= link_to 'Show', event_path(event) %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr><br><br>
+  <% end %>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" role="button">Learn more</a>
+  </p>
+</div>
+<!--/.Jumbotron-->
+
+
 <p></p>
 <%= link_to 'Home', root_path %>
-<br>
 <%= link_to 'New', new_event_path %>

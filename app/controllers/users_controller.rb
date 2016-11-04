@@ -15,7 +15,6 @@ class UsersController < ApplicationController
       redirect_to '/'
     else
       render 'errors'
-      # My name is nga
     end
   end
 
