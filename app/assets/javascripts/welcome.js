@@ -11,10 +11,14 @@ ready = function () {
         console.log("YOLO");
         $("#signup-modal").modal();
     });
+
+    $('#signup-modal').on('submit', function() {
+        $('#addListItem').modal('hide');
+    });
 };
 
 
 
 
 $(document).ready(ready);
-$(document).on("page:load", ready);
+$(document).on("turbolinks:load", ready);
