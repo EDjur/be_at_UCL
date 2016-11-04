@@ -25,6 +25,29 @@
   </div>
   <!--/.Mask-->
 
+  <% if @user.errors.any? %>
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="error-modal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+                <div id="error_explanation">
+                  <h2>
+                    <%= pluralize(@user.errors.count, "error") %> prohibited
+                    this user from being saved:
+                  </h2>
+                  <ul>
+                    <% @user.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
 
   <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="signup-modal">
     <div class="modal-dialog modal-lg" role="document">
@@ -37,6 +60,7 @@
       </div>
     </div>
   </div>
+
 
 </header>
 <!--/Navigation & Intro-->
