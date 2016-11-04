@@ -25,12 +25,12 @@
   </div>
   <!--/.Mask-->
 
-  <% if @user.errors.any? %>
   <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="error-modal">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
+            vafaaaaaaaaaaaan
                 <div id="error_explanation">
                   <h2>
                     <%= pluralize(@user.errors.count, "error") %> prohibited
@@ -47,7 +47,6 @@
       </div>
     </div>
   </div>
-  <% end %>
 
   <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="signup-modal">
     <div class="modal-dialog modal-lg" role="document">
@@ -63,4 +62,20 @@
 
 
 </header>
+
+<script type="text/javascript">
+  var user_errors = <%= @user.errors.any? %>;
+  console.log(user_errors);
+  check_for_errors(user_errors); // this is your function in .js file
+
+  function check_for_errors (user_errors) {
+    console.log("ERRORS");
+    console.log(user_errors);
+    if(user_errors){
+      $('#error-modal').modal();
+    }
+
+  }
+
+</script>
 <!--/Navigation & Intro-->

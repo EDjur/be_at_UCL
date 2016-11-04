@@ -7,10 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save # returns false if invalid
       @events = Event.all
-      render '/events/index'
-      # redirect_to @user
+      redirect_to '/'
     else
-      render '/welcome/index'
+      render 'errors'
 
     end
   end
