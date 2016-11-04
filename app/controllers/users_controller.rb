@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @user = Event.all
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save # returns false if invalid
