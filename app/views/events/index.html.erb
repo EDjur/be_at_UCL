@@ -2,29 +2,71 @@
 <%= render 'layouts/header' %>
 <!--/.Navbar-->
 <br><br>
-<!--Jumbotron-->
-<div class="jumbotron-col-lg-6-col-centered">
-  <h1 class="h1-responsive">Listing Events</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-2">
-  <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <br>
-        <td><%= event.text %></td>
-        <br>
-        <td><%= link_to 'Show', event_path(event) %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event_path(event), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      </tr><br><br>
-  <% end %>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" role="button" href="events/new/">New event</a>
-  </p>
-</div>
-<!--/.Jumbotron-->
+<main>
 
+  <!--Main layout-->
+  <div class="container">
+    <!--First row-->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <h2 class="h2-responsive">Booking @ UCL</h2>
+          <br>
+          <p>Stuff stuff</p>
+          <hr>
+          <p>Other stuff stuff</p>
+          <p class="lead">
+          <%= link_to new_event_path, :class => "btn btn-primary" do %>
+            New Event
+          <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/.First row-->
 
-<p></p>
-<%= link_to 'Home', root_path %>
-<%= link_to 'New', new_event_path %>
+    <hr class="extra-margins">
+
+    <!--Second row-->
+
+    <div class="row">
+      <% @events.each do |event| %>
+          <!--First columnn-->
+          <div class="col-md-4">
+            <!--Card-->
+            <div class="card">
+
+              <!--Card image-->
+              <div class="view overlay hm-white-slight">
+                <img src="http://mdbootstrap.com/images/regular/city/img%20(2).jpg" class="img-fluid" alt="">
+                <a href="#">
+                  <div class="mask"></div>
+                </a>
+              </div>
+              <!--/.Card image-->
+
+              <!--Card content-->
+              <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title"><%= event.title %></h4>
+                <!--Text-->
+                <p class="card-text"><%= event.text %></p>
+                <%= link_to event_path(event), :class => "btn btn-primary" do %>
+                    Read more
+                <% end %>
+              </div>
+              <!--/.Card content-->
+
+            </div>
+            <!--/.Card-->
+          </div>
+          <!--First columnn-->
+      <% end %>
+
+    </div>
+
+    <!--/.Second row-->
+  </div>
+  <!--/.Main layout-->
+
+</main>

@@ -82,3 +82,28 @@ header{
   width: 1000px;
   margin: 0 auto;
 }
+
+/* TEMPLATE STYLES */
+
+main {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.extra-margins {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.card-block {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  margin-bottom: 1rem;
+}
