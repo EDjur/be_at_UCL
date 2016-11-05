@@ -12,7 +12,7 @@
         <li class="wow fadeInUp" data-wow-delay="0.4s">
 
           <a class="btn btn-white-outline btn-lg" id="signup"><i class="fa fa-user left"></i> Sign up!</a>
-          <a class="btn btn-white-outline btn-lg"><i class="fa fa-book left"></i>Login</a>
+          <a class="btn btn-white-outline btn-lg" id="login"><i class="fa fa-book left"></i>Login</a>
         </li>
         <li>
           <%= link_to controller: 'events' do %>
@@ -35,6 +35,18 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <%= render '/users/form', :user => @user %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="login-modal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= render '/sessions/form' %>
           </div>
         </div>
       </div>

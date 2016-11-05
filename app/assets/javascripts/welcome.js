@@ -33,6 +33,15 @@ ready = function () {
             }
         }
     });
+
+    $('#login').on('click', function() {
+        console.log("YOLO");
+        $("#login-modal").modal();
+    });
+
+    $('#login-modal').on('submit', function() {
+        $('#addListItem').modal('hide');
+    });
 };
 
 $(document).ready(ready);

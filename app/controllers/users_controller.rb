@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save # returns false if invalid
-      @user= User.all
+      log_in @user
+      ## @user= User.all
       redirect_to '/'
     else
       render 'errors'
