@@ -5,8 +5,9 @@
 console.log("welcome.js loaded");
 
 var ready;
-// new WOW().init();
+
 ready = function () {
+    new WOW().init();
     $('#signup').on('click', function() {
         $("#signup-modal").modal();
     });
