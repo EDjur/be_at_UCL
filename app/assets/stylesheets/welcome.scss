@@ -23,7 +23,22 @@ header,
   background-size: cover;
 }
 
+/* Navigation*/
+
 .navbar {
-  margin-bottom: 0;
+  background-color: transparent;
 }
 
+.scrolling-navbar {
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  transition: background .5s ease-in-out, padding .5s ease-in-out;
+}
+
+.top-nav-collapse {
+  background-color: #1C2331;
+}
+
+ul li a {
+  color: white;
+}

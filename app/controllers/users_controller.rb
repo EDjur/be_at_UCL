@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save # returns false if invalid
       log_in @user
       ## @user= User.all
-      redirect_to '/'
+      redirect_to events_path
     else
       render 'errors'
     end

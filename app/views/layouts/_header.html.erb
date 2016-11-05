@@ -2,7 +2,7 @@
 <nav class="navbar navbar-dark">
 
 
-  <div class="container">
+  <div class="container" id="main-navbar">
 
     <!--Navbar Brand-->
     <a class="navbar-brand" href="/">b@UCL</a>
@@ -21,19 +21,7 @@
       <% else %>
           <li><%= link_to "Log in", login_path %></li>
       <% end %>
-      <li class="nav-item btn-group">
-        <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <a class="dropdown-item">Action</a>
-          <a class="dropdown-item">Another action</a>
-          <a class="dropdown-item">Something else here</a>
-        </div>
-      </li>
     </ul>
-    <!--Search form-->
-    <form class="form-inline">
-      <input class="form-control" type="text" placeholder="Search">
-    </form>
   </div>
 </nav>
 <!--/.Navbar-->

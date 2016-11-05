@@ -8,7 +8,6 @@ var ready;
 // new WOW().init();
 ready = function () {
     $('#signup').on('click', function() {
-        console.log("YOLO");
         $("#signup-modal").modal();
     });
 
@@ -35,7 +34,10 @@ ready = function () {
     });
 
     $('#login').on('click', function() {
-        console.log("YOLO");
+        $("#login-modal").modal();
+    });
+
+    $('#list-login').on('click', function() {
         $("#login-modal").modal();
     });
 
