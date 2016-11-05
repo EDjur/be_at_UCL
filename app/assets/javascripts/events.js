@@ -65,9 +65,9 @@ function initMap() {
 
         // parse the json to retrieve street, number and city of the event location
         for (i =0; i < place.address_components.length; i++) {
-            console.log("this is i: ", i);
+            // console.log("this is i: ", i);
             if (place.address_components[i]["types"]["0"] == "route") {
-                console.log("hi2")
+                // console.log("hi2")
                 event_street = place.address_components[i]["long_name"]
             }
             if (place.address_components[i]["types"]["0"] == "street_number"){
@@ -86,10 +86,7 @@ function initMap() {
         console.log("number: ", event_housenumber);
         console.log("city: ", event_city);
 
-
     });
-
-
 
 }
 
