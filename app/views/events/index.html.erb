@@ -25,16 +25,17 @@
     <div class="row">
       <div class="col-md-12">
         <div class="jumbotron">
-          <h2 class="h2-responsive">Search Events</h2>
+          <h2 class="h2-responsive">Search</h2>
           <br>
 
           <%= form_tag(events_path, :method => "get", id: "search-form") do %>
-              <%= text_field_tag :search, params[:search], placeholder: "Search Events" %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Events (title or category)" %>
               <br><br>
               <%= submit_tag "Search" %>
           <% end %>
 
           <br>
+
 
         </div>
 
@@ -48,6 +49,7 @@
               <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
           <% end %>
     </div>
+
 
     <!--/.Second row-->
   </div>
