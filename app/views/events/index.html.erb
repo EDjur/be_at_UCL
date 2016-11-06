@@ -11,10 +11,7 @@
       <div class="col-md-12">
         <div class="jumbotron">
           <h2 class="h2-responsive">Booking @ UCL</h2>
-          <br>
-          <p>Stuff stuff</p>
-          <hr>
-          <p>Other stuff stuff</p>
+
           <p class="lead">
           <%= link_to new_event_path, :class => "btn btn-primary" do %>
             New Event
@@ -25,45 +22,31 @@
     </div>
     <!--/.First row-->
 
-    <hr class="extra-margins">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <h2 class="h2-responsive">Search Events</h2>
+          <br>
 
-    <!--Second row-->
+          <%= form_tag(events_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Events" %>
+              <br><br>
+              <%= submit_tag "Search" %>
+          <% end %>
+
+          <br>
+
+        </div>
+
+      </div>
+    </div>
 
     <div class="row">
-      <% @events.each do |event| %>
-          <!--First columnn-->
-          <div class="col-md-4">
-            <!--Card-->
-            <div class="card">
-
-              <!--Card image-->
-              <div class="view overlay hm-white-slight">
-                <%= link_to event_path(event) do %>
-                    <img src="http://mdbootstrap.com/images/regular/city/img%20(2).jpg" class="img-fluid" alt="">
-                <% end %>
-              </div>
-              <!--/.Card image-->
-
-              <!--Card content-->
-              <div class="card-block">
-                <!--Title-->
-                <h4 class="card-title"><%= event.title %></h4>
-                <!--Text-->
-                <p class="card-text"><%= event.text %></p>
-                <p>Where? <%= event.street %>, <%= event.city %> </p>
-
-                <%= link_to event_path(event), :class => "btn btn-primary" do %>
-                    Read more
-                <% end %>
-              </div>
-              <!--/.Card content-->
-
-            </div>
-            <!--/.Card-->
-          </div>
-          <!--First columnn-->
-      <% end %>
-
+          <% if @events.present? %>
+              <%= render 'search' %>
+          <% else %>
+              <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+          <% end %>
     </div>
 
     <!--/.Second row-->
