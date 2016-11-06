@@ -1,15 +1,44 @@
-<div class="jumbotron-col-lg-6-col-centered">
-  <h1 class="h1-responsive"><%= @event.title %> </h1>
-  <p class="lead">
-    <%= @event.text %>
-  </p>
+<!--Navbar-->
+<%= render 'layouts/header' %>
+<!--/.Navbar-->
+<br><br>
+<main>
 
-  <h2>Comments</h2>
-  <%= render @event.comments %>
+<div class="container">
+  <!--First row-->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h2 class="h2-responsive"><%= @event.title %></h2>
+        <br>
+        <p><%= @event.text %></p>
+        <hr>
 
-  <h2>Add a comment:</h2>
-  <%= render 'comments/form' %>
+        <h2 class="h2-responsive">Location (want to plot on Google Maps)</h2>
+        <p><%= @event.street %>, <%= @event.street_number %></p>
+        <p><%= @event.city %></p>
+        <br>
+        <h2 class="h2-responsive">Time</h2>
+        <p>From: <%= @event.start_date.to_date() %>, <%= @event.start_time.strftime("%I:%M%p") %></p>
+        <p>To: <%= @event.end_date.to_date() %>, <%= @event.end_time.strftime("%I:%M%p") %></p>
+        <br>
 
-  <%= link_to 'Edit', edit_event_path(@event) %>
-  <%= link_to 'Back', events_path %>
+        <h2>Comments</h2>
+        <%= render @event.comments %>
+
+        <h2>Add a comment:</h2>
+        <%= render 'comments/form' %>
+        <p class="lead">
+          <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
+              Edit event
+          <% end %>
+          <%= link_to events_path, :class => "btn btn-primary" do %>
+              Back
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
+
+</main>
