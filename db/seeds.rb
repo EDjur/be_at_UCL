@@ -9,4 +9,4 @@
 
 DatabaseCleaner.clean_with :truncation
 
-Event.create([{title: 'Event 1', text: "This is a test event", street: "Test Street", street_number: "1", city: "London"}, {title: 'Event 2', text: "This is a test event", street: "Test Street", street_number: "2", city: "London"}, {title: 'Event 3', text: "This is a test event", street: "Test Street", street_number: "3", city: "London"}, {title: 'Event 4', text: "This is a test event", street: "Test Street", street_number: "4", city: "London"}])
+# Event.create([{title: 'Event 1', text: "This is a test event", street: "Test Street", street_number: "1", city: "London"}, {title: 'Event 2', text: "This is a test event", street: "Test Street", street_number: "2", city: "London"}, {title: 'Event 3', text: "This is a test event", street: "Test Street", street_number: "3", city: "London"}, {title: 'Event 4', text: "This is a test event", street: "Test Street", street_number: "4", city: "London"}])

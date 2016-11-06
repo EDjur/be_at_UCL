@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105195116) do
+ActiveRecord::Schema.define(version: 20161106001108) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 20161105195116) do
     t.string   "street"
     t.string   "street_number"
     t.string   "city"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.decimal  "tickets"
+    t.time     "start_time"
+    t.time     "end_time"
   end
 
   create_table "users", force: :cascade do |t|

@@ -20,16 +20,18 @@
       <link href="../../assets/stylesheets/events.scss" rel="stylesheet">
     </head>
 
+    <h3>Title and description</h3>
+
     <p>
-      <%= f.label :title %>
+      <%= f.label :title%>
       <br>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, :value => "Sean's birthday party" %>
     </p>
 
     <p>
       <%= f.label :text %>
       <br>
-      <%= f.text_area :text %>
+      <%= f.text_field :text, :value => "We're coming together to celebrate Sean turning 21" %>
     </p>
 
     <p>
@@ -38,38 +40,62 @@
 
     <div class="display-section">
       <h3>Location</h3>
+    <!--</div>-->
+    <!--<input id="pac-input" class="controls" type="text"-->
+           <!--placeholder="Enter a location">-->
+    <!--<div id="map">-->
     </div>
-    <input id="pac-input" class="controls" type="text"
-           placeholder="Enter a location">
-    <div id="map"></div>
 
     <p>
       <%= f.label :street %>
       <br>
-      <%= f.text_field :street %>
+      <%= f.text_field :street, :value => "Euston Road" %>
     </p>
 
     <p>
       <%= f.label :street_number %>
       <br>
-      <%= f.text_field :street_number %>
+      <%= f.text_field :street_number, :value => "321, Lizmans House Flat 7"%>
     </p>
 
     <p>
       <%= f.label :city %>
       <br>
-      <%= f.text_field :city %>
+      <%= f.text_field :city, :value => "London"%>
     </p>
 
-    <form>
-      <div class="display-section">
-        <h3>Date and time, category and # of tickets</h3>
-        <label>Start:
-          <input id="start-date-time" type="datetime-local">
-        </label><br><br>
-        <label>End:
-          <input id="end-date-time" type="datetime-local">
-        </label><br><br>
+    <h3>Date and time, category and # of tickets</h3>
+    <p>
+      <%= f.label :start_date%>
+      <br>
+      <%= f.date_select :start_date, :start_year => 1900%>
+    </p>
+
+    <p>
+      <%= f.label :start_time%>
+      <br>
+      <%= f.time_select :start_time%>
+    </p>
+
+    <p>
+      <%= f.label :end_date %>
+      <br>
+      <%= f.date_select :end_date%>
+    </p>
+
+    <p>
+      <%= f.label :end_time%>
+      <br>
+      <%= f.time_select :end_time%>
+    </p>
+
+    <p>
+
+      <%= f.label :tickets %>
+      <br>
+      <%= f.number_field :tickets%>
+    </p>
+
         <label>Category:
           <select name="category">
             <option selected disabled>Select</option>
@@ -77,15 +103,10 @@
             <option value="category2">Category2</option>
           </select>
         </label><br><br>
-        <label>Number of tickets:
-          <input type="number" max="300" min="5">
-        </label><br><br>
-      </div>
-    </form>
 
 
     <p>
-      <%= f.submit %>
+      <%= f.submit 'Create' %>
     </p>
 
     <script src="../../assets/javascripts/events.js"></script>
