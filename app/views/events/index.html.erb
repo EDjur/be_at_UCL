@@ -51,6 +51,8 @@
                 <h4 class="card-title"><%= event.title %></h4>
                 <!--Text-->
                 <p class="card-text"><%= event.text %></p>
+                <p>Where? <%= event.street %>, <%= event.city %> </p>
+
                 <%= link_to event_path(event), :class => "btn btn-primary" do %>
                     Read more
                 <% end %>

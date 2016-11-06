@@ -1,18 +1,15 @@
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<div class="jumbotron-col-lg-6-col-centered">
+  <h1 class="h1-responsive"><%= @event.title %> </h1>
+  <p class="lead">
+    <%= @event.text %>
+  </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @event.text %>
-</p>
+  <h2>Comments</h2>
+  <%= render @event.comments %>
 
-<h2>Comments</h2>
-<%= render @event.comments %>
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_event_path(@event) %>
-<%= link_to 'Back', events_path %>
+  <%= link_to 'Edit', edit_event_path(@event) %>
+  <%= link_to 'Back', events_path %>
+</div>
