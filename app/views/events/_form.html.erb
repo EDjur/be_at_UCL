@@ -18,13 +18,13 @@
     <p>
       <%= f.label :title%>
       <br>
-      <%= f.text_field :title, :value => "Sean's birthday party" %>
+      <%= f.text_field :title, :value => "Sean's study party" %>
     </p>
 
     <p>
       <%= f.label :text %>
       <br>
-      <%= f.text_field :text, :value => "We're coming together to celebrate Sean turning 21" %>
+      <%= f.text_field :text, :value => "We're coming together to celebrate our new assignment" %>
     </p>
 
     <div class="display-section">
@@ -54,29 +54,28 @@
     </p>
 
     <h3>Date and time, category and # of tickets</h3>
-    <p>
-      <%= f.label :start_date%>
-      <br>
-      <%= f.date_select :start_date, :start_year => 1900%>
-    </p>
 
     <p>
       <%= f.label :start_time%>
       <br>
       <%= f.time_select :start_time%>
-    </p>
-
-    <p>
-      <%= f.label :end_date %>
       <br>
-      <%= f.date_select :end_date%>
+      <%= f.label :start_date%>
+      <br>
+      <%= f.date_select :start_date, :start_year => 1900%>
+
     </p>
 
     <p>
       <%= f.label :end_time%>
       <br>
       <%= f.time_select :end_time%>
+      <br>
+      <%= f.label :end_date %>
+      <br>
+      <%= f.date_select :end_date%>
     </p>
+
 
     <p>
       <%= f.label :tickets %>

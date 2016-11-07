@@ -29,7 +29,7 @@
           <br>
 
           <%= form_tag(events_path, :method => "get", id: "search-form") do %>
-              <%= text_field_tag :search, params[:search], placeholder: "Search Events (title or category)" %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Events (title, description or category)" %>
               <br><br>
               <%= submit_tag "Search" %>
           <% end %>
