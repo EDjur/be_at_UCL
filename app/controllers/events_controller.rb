@@ -41,7 +41,6 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-
     if @event.update(event_params) # It is not necessary to pass all the attributes to update. For example, if @article.update(title: 'A new title') was called, Rails would only update the title attribute, leaving all other attributes untouched.
       redirect_to @event
     else
@@ -58,6 +57,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :text, :street, :street_number, :city, :start_date, :end_date, :tickets, :start_time, :end_time, :category)
+    params.require(:event).permit(:title, :text, :street, :street_number, :city, :start_date, :end_date, :tickets, :start_time, :end_time, :category, :user_id)
   end
 end

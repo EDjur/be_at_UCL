@@ -35,6 +35,18 @@
           <%= link_to events_path, :class => "btn btn-primary" do %>
               Back
           <% end %>
+
+          <!-- THIS IS THE ERROR-CAUSING SECTION -->
+          <%= link_to events_path, :class => "btn btn-primary" do %>
+              <% if current_user.present? %>
+                  <% event = Event.find(@event) %>
+                  <% event.user_id = "test" %>
+                  <% event.save %>
+
+              <% end %>
+              Book ticket
+          <% end %>
+
         </p>
       </div>
     </div>
@@ -42,3 +54,4 @@
 </div>
 
 </main>
+
