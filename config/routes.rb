@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+
   resources :events do
     resources :comments
   end
 
   resources :users
-
+  put   'events/bookticket/:id', to: 'events#update', as: 'bookticket'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

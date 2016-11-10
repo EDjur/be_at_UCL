@@ -22,7 +22,6 @@
         <p>From: <%= @event.start_date.to_date %>, <%= @event.start_time.strftime("%I:%M%p") %></p>
         <p>To: <%= @event.end_date.to_date %>, <%= @event.end_time.strftime("%I:%M%p") %></p>
         <br>
-
         <h2>Comments</h2>
         <%= render @event.comments %>
 
@@ -36,14 +35,7 @@
               Back
           <% end %>
 
-          <!-- THIS IS THE ERROR-CAUSING SECTION -->
-          <%= link_to events_path, :class => "btn btn-primary" do %>
-              <% if current_user.present? %>
-                  <% event = Event.find(@event) %>
-                  <% event.user_id = "test" %>
-                  <% event.save %>
-
-              <% end %>
+          <%= link_to bookticket_path(event: {user_id: current_user.id}), :class => "btn btn-primary", method: :put do %>
               Book ticket
           <% end %>
 
