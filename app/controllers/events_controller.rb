@@ -4,7 +4,12 @@ class EventsController < ApplicationController
   # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
   def index
-    @events = Event.all
+    # @events = Event.all
+
+    # Relict from search by date
+    # @search = Event.new(params[:search])
+    # @events = @search.scope
+
     if params[:search]
       @events = Event.search(params[:search]).order("created_at DESC")
     else
