@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 20161111192001) do
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "street"
     t.string   "street_number"
     t.string   "city"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.decimal  "tickets"
+    t.decimal  "available_tickets"
     t.time     "start_time"
     t.time     "end_time"
     t.string   "category"

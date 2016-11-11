@@ -12,48 +12,49 @@
 
     <div class="jumbotron">
 
-        <h2 class="h2-responsive"><%= @event.title %></h2>
-        <br>
-        <h4><%= @event.text %></h4>
+      <h2 class="h2-responsive"><%= @event.title %></h2>
+      <br>
+      <h4><%= @event.text %></h4>
     </div>
 
     <div class="jumbotron">
-        <h2 class="h2-responsive">Location (want to plot on Google Maps)</h2>
+      <h2 class="h2-responsive">Location (want to plot on Google Maps)</h2>
       <br>
-        <h4><%= @event.street %>, <%= @event.street_number %></h4>
-        <%= @event.city %>
+      <h4><%= @event.street %>, <%= @event.street_number %></h4>
+      <%= @event.city %>
 
     </div>
 
     <div class="jumbotron">
-        <h2 class="h2-responsive">Time & Tickets</h2>
+      <h2 class="h2-responsive">Time & Tickets</h2>
       <br>
-        <h4>From: <%= @event.start_date.to_date %>, <%= @event.start_time.strftime("%I:%M%p") %></h4>
-        <h4>To: <%= @event.end_date.to_date %>, <%= @event.end_time.strftime("%I:%M%p") %></h4>
-      <h4>Number of tickets available: <%= @event.tickets %></h4>
+      <h4>From: <%= @event.start_date.to_date %>, <%= @event.start_time.strftime("%I:%M%p") %></h4>
+      <h4>To: <%= @event.end_date.to_date %>, <%= @event.end_time.strftime("%I:%M%p") %></h4>
+      <h4>Number of tickets available: <%= @event.available_tickets %></h4>
     </div>
-      <br>
+    <br>
 
     <div class="jumbotron">
-        <h2>Comments</h2>
-        <%= render @event.comments %>
+      <h2>Comments</h2>
+      <%= render @event.comments %>
 
-        <h2>Add a comment:</h2>
-        <%= render 'comments/form' %>
-      </div>
+      <h2>Add a comment:</h2>
+      <%= render 'comments/form' %>
+    </div>
     <div class="jumbotron">
       <p class="lead">
         <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
             Edit event
         <% end %>
 
-        <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
-            Book ticket
+        <% if logged_in? %>
+            <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
+                Book ticket
+            <% end %>
         <% end %>
       </p>
     </div>
-    </div>
-
+  </div>
 
 
 </main>
