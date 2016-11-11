@@ -47,7 +47,7 @@
             Edit event
         <% end %>
 
-        <%= link_to bookticket_path(event: {user_id: current_user.id}), :class => "btn btn-primary", method: :put do %>
+        <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
             Book ticket
         <% end %>
       </p>
