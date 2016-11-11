@@ -13,20 +13,25 @@
           </ul>
         </div>
     <% end %>
+
+    <div class="jumbotron">
     <h3>Title and description</h3>
 
-    <p>
-      <%= f.label :title%>
-      <br>
-      <%= f.text_field :title, :value => "Sean's study party" %>
-    </p>
 
-    <p>
-      <%= f.label :text %>
+    <div class="md-form">
+      <%= f.label :title, value: "Event title"%>
       <br>
-      <%= f.text_field :text, :value => "We're coming together to celebrate our new assignment" %>
-    </p>
+      <%= f.text_field :title%>
+    </div>
 
+    <div class="md-form">
+      <%= f.label :text, value: "Description" %>
+      <br>
+      <%= f.text_field :text%>
+    </div>
+    </div>
+
+    <div class="jumbotron">
     <div class="display-section">
       <h3>Location</h3>
     </div>
@@ -35,24 +40,27 @@
     <div id="map">
     </div>
 
-    <p>
-      <%= f.label :street %>
+    <br>
+    <div class="md-form">
+      <%= f.label :street, value: "Street name" %>
       <br>
-      <%= f.text_field :street, :value => "Euston Road" %>
-    </p>
+      <%= f.text_field :street %>
+    </div>
 
-    <p>
-      <%= f.label :street_number %>
+    <div class="md-form">
+      <%= f.label :street_number, value: "Street number or house" %>
       <br>
-      <%= f.text_field :street_number, :value => "321, Lizmans House Flat 7"%>
-    </p>
+      <%= f.text_field :street_number %>
+    </div>
 
-    <p>
-      <%= f.label :city %>
+    <div class="md-form">
+      <%= f.label :city, value: "City" %>
       <br>
-      <%= f.text_field :city, :value => "London"%>
-    </p>
+      <%= f.text_field :city %>
+    </div>
+      </div>
 
+      <div class="jumbotron">
     <h3>Date and time, category and # of tickets</h3>
 
     <p>
@@ -76,12 +84,12 @@
       <%= f.date_select :end_date%>
     </p>
 
-
-    <p>
-      <%= f.label :tickets %>
+    <br>
+    <div class="md-form">
+      <%= f.label :tickets, value: "Tickets" %>
       <br>
       <%= f.number_field :tickets%>
-    </p>
+    </div>
 
     <p>
       <%= f.label "Category" %>
@@ -89,10 +97,17 @@
       <%= f.select(:category, options_for_select([["Study session", "Study session"], ["Group meeting", "Group meeting"],
                                                  ["Guest talk", "Guest talk"], ["Other", "Other"]]))%>
     </p>
+    </div>
 
-    <p>
-      <%= f.submit 'Create' %>
-    </p>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <p class="lead">
+            <%= f.submit 'Create', class: "btn btn-primary" %>
+          </p>
+        </div>
+      </div>
+    </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUHGDBmVqTToBoTTppgJBDjY3ESGLmItQ&libraries=places&callback=initMap"
             async defer></script>

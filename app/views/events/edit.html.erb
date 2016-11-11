@@ -1,6 +1,12 @@
-<h1>Editing event</h1>
+<!--Navbar-->
+<%= render 'layouts/header' %>
+<!--/.Navbar-->
+<br><br>
 
-<%= render 'form' %>
+<div class="jumbotron-col-lg-6-col-centered">
+  <h1 class="h1-responsive">Edit Event</h1>
+  <%= link_to 'Back', events_path, class: "btn btn-primary" %>
 
-<%= link_to 'Back', events_path %>
+  <%= render 'form' %>
 
+</div>

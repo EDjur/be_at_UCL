@@ -4,15 +4,12 @@
 <!--/.Navbar-->
 <br><br>
 
-<!--Jumbotron-->
 <div class="jumbotron-col-lg-6-col-centered">
   <h1 class="h1-responsive">New Event</h1>
   <p class="lead">Create your event with a lit title and appropriate description</p>
-  <hr class="my-2">
+  <%= link_to 'Back', events_path, class: "btn btn-primary" %>
   <%= render 'form' %>
 
-  <%= link_to 'Back', events_path %>
 
 
 </div>
-<!--/.Jumbotron-->

@@ -1,15 +1,16 @@
 <%= form_for([@event, @event.comments.build]) do |f| %>
 
-    <p>
+    <br>
+    <div class="md-form">
       <%= f.label :commenter %><br>
       <%= f.text_field :commenter %>
-    </p>
-    <p>
+    </div>
+    <div class="md-form">
       <%= f.label :body %><br>
       <%= f.text_field :body %>
-    </p>
+    </div>
     <p>
-      <%= f.submit %>
+      <%= f.submit class: "btn btn-primary"%>
     </p>
 
 
