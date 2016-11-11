@@ -3,7 +3,7 @@
     <br>
     <div class="md-form">
       <%= f.label :commenter %><br>
-      <%= f.text_field :commenter %>
+      <%= f.text_field :commenter, value: current_user.name %>
     </div>
     <div class="md-form">
       <%= f.label :body %><br>
