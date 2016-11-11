@@ -1,53 +1,86 @@
 <%= render 'layouts/header' %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
-      <div class="panel">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= @user.name %> </h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-3 col-lg-3 " align="center" id="user-page"><%= image_tag("UCLSoM_Logo.jpg") %></div>
+<br><br>
 
-            <div class=" col-md-9 col-lg-9 ">
-              <table class="table table-user-information">
-                <tbody>
-                <tr>
-                  <td>Department:</td>
-                  <td>UCL School of Management</td>
-                </tr>
-                <tr>
-                  <td>Date of Birth</td>
-                  <td>23/09/1993</td>
-                </tr>
-                <tr>
-                <tr>
-                  <td>Home Address</td>
-                  <td>London, UK</td>
-                </tr>
-                <% if logged_in? %>
-                    <tr>
-                      <td>Email</td>
-                      <td><a href="mailto:<%= @user.email %>"><%= @user.email %></a></td>
-                    </tr>
-                <% end %>
-                </tbody>
-              </table>
-              <a href="#" class="btn btn-primary">My Events</a>
-            </div>
-          </div>
-        </div>
-        <div class="panel-footer">
-          <span class="pull-right">
-            <% if logged_in? %>
-            <a href="#" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-            <a href="#" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
-            <% end %>
-          </span>
-        </div>
+<div class="container">
+  <!--First row-->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h1 class="h1-responsive">
+          <%= @user.name %>
+        </h1>
+        <p>Department: <%= @user.department %></p>
       </div>
+
+      <div class="jumbotron">
+        <h2 class="h2-responsive">
+          My events list
+        </h2>
+
+        <p>
+
+
+        </p>
+
+      </div>
+
     </div>
   </div>
+
 </div>
+
+
+
+
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">-->
+      <!--<div class="panel">-->
+        <!--<div class="panel-heading">-->
+          <!--<h3 class="panel-title"><%= @user.name %> </h3>-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+          <!--<div class="row">-->
+            <!--<div class="col-md-3 col-lg-3 " align="center" id="user-page"><%= image_tag("UCLSoM_Logo.jpg") %></div>-->
+
+            <!--<div class=" col-md-9 col-lg-9 ">-->
+              <!--<table class="table table-user-information">-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                  <!--<td>Department:</td>-->
+                  <!--<td>UCL School of Management</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                  <!--<td>Date of Birth</td>-->
+                  <!--<td>23/09/1993</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<tr>-->
+                  <!--<td>Home Address</td>-->
+                  <!--<td>London, UK</td>-->
+                <!--</tr>-->
+                <!--<% if logged_in? %>-->
+                    <!--<tr>-->
+                      <!--<td>Email</td>-->
+                      <!--<td><a href="mailto:<%= @user.email %>"><%= @user.email %></a></td>-->
+                    <!--</tr>-->
+                <!--<% end %>-->
+                <!--</tbody>-->
+              <!--</table>-->
+              <!--<a href="#" class="btn btn-primary">My Events</a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="panel-footer">-->
+          <!--<span class="pull-right">-->
+            <!--<% if logged_in? %>-->
+            <!--<a href="#" data-original-title="Edit Profile" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>-->
+            <!--<a href="#" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>-->
+            <!--<% end %>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

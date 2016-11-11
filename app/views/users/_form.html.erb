@@ -3,6 +3,9 @@
     <%= f.text_field :name %>
     <%= f.label :name %>
 
+    <%= f.text_field :department %>
+    <%= f.label :department %>
+
     <%= f.email_field :email %>
     <%= f.label :email %>
 
@@ -11,6 +14,7 @@
 
     <%= f.password_field :password_confirmation %>
     <%= f.label :password_confirmation, "Confirmation" %>
+
     <br>
 
     <%= f.submit "Create my account", class: "btn btn-primary" %>

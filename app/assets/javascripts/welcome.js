@@ -30,6 +30,9 @@ ready = function () {
             "user[password_confirmation]": {
                 required: true,
                 equalTo: "#user_password"
+            },
+            "user[department]": {
+                required: true
             }
         }
     });
