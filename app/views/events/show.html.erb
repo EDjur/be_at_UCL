@@ -10,6 +10,17 @@
         Back
     <% end %>
 
+    <% if flash[:notice] %>
+        <div class="jumbotron" style="background-color:greenyellow;">
+            <h2 class="h2-responsive">
+              <div class="notice"><%= flash[:notice] %></div>
+            </h2>
+        </div>
+    <% end %>
+
+
+
+
     <div class="jumbotron">
 
       <h2 class="h2-responsive"><%= @event.title %></h2>
@@ -39,8 +50,8 @@
       <%= render @event.comments %>
 
       <% if logged_in? %>
-      <h2>Add a comment:</h2>
-      <%= render 'comments/form' %>
+          <h2>Add a comment:</h2>
+          <%= render 'comments/form' %>
       <% end %>
 
     </div>
@@ -55,6 +66,7 @@
                 Book ticket
             <% end %>
         <% end %>
+
       </p>
     </div>
   </div>

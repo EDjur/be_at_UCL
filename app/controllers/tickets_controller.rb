@@ -8,6 +8,7 @@ class TicketsController < ApplicationController
     puts "YOLOOOOOOOOOOOOOOO"
     @event = Event.find(params[:event_id])
     @ticket = @event.tickets.create(ticket_params)
+    flash[:notice] = "Hooray! Ticket successfully booked."
     redirect_to event_path(@event)
   end
 
