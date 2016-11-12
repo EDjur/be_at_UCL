@@ -31,7 +31,10 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-
+    if logged_in?
+      @event.host_user_id = current_user.id
+    end
+    @event.tickets_sold = 0
     if @event.save # returns false if invalid
       redirect_to @event
     else
