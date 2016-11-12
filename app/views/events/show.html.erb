@@ -81,11 +81,13 @@
           Edit event
       <% end %>
 
-      <% if time_surpassed? %>
-          <% if tickets_left? %>
-              <% if logged_in? %>
-                  <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
-                      Book ticket
+      <% unless has_ticket?(@event) %>
+          <% if time_surpassed? %>
+              <% if tickets_left? %>
+                  <% if logged_in? %>
+                      <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
+                          Book ticket
+                      <% end %>
                   <% end %>
               <% end %>
           <% end %>

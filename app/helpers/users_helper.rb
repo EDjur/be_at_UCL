@@ -7,8 +7,10 @@ module UsersHelper
       puts ticket.event_id
       my_events << Event.where(["id = ?", ticket.event_id]).first
     end
-
-    puts my_events
     return my_events
+  end
+
+  def has_ticket?(event)
+    !(Ticket.where(["event_id = ?", event.id]).select("event_id").all).nil?
   end
 end
