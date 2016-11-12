@@ -10,6 +10,7 @@ module BeAtUcl
   class Application < Rails::Application
 
     config.autoload_paths += %W(#{config.root}/lib)
+    config.active_record.time_zone_aware_types = [:datetime, :time]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
