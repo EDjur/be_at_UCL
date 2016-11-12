@@ -86,9 +86,9 @@
 
     <br>
     <div class="md-form">
-      <%= f.label :available_tickets, value: "Tickets" %>
+      <%= f.label :available_tickets, value: "Tickets", :id => "ticket_label" %>
       <br>
-      <%= f.number_field :available_tickets%>
+      <%= f.number_field :available_tickets, :class => "required"%>
     </div>
 
     <p>

@@ -132,6 +132,26 @@ function initMap() {
 //         }
 //     }
 // }
+events_ready = function () {
+    $('#new_event').validate({
+        invalidHandler: function(event, validator) {
+            var errors = validator.numberOfInvalids();
+            if (errors) {
+                var label = $('#ticket_label');
+                label.html("");
+            }
+        },
 
+        rules: {
+            "event[available_tickets]": {
+                required: true
+            }
+        }
 
+    });
+};
+
+var events_ready;
+$(document).ready(events_ready);
+$(document).on("turbolinks:load", events_ready);
 
