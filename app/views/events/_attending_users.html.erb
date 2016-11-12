@@ -1,0 +1,28 @@
+<p></p>
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Profile</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% attending_guests(@event).each do |user| %>
+
+      <tr>
+        <th scope="row">1</th>
+        <td><%= user.name %></td>
+        <td><%= user.department %></td>
+        <td><%= link_to user_path(user), :class => "btn btn-primary" do %>
+              Details
+          <% end %>
+        </td>
+      </tr>
+
+
+  <% end %>
+
+  </tbody>
+</table>
