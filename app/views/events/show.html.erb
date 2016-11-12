@@ -75,25 +75,27 @@
 
   </div>
 
-  <div class="jumbotron">
-    <p class="lead">
-      <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
-          Edit event
-      <% end %>
+  <% if logged_in? %>
+      <div class="jumbotron">
+        <p class="lead">
+          <% if is_host? %>
+              <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
+                  Edit event
+              <% end %>
+          <% end %>
 
-      <% unless has_ticket?(@event) %>
-          <% if time_surpassed? %>
-              <% if tickets_left? %>
-                  <% if logged_in? %>
+          <% unless has_ticket?(@event) %>
+              <% if time_surpassed? %>
+                  <% if tickets_left? %>
                       <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
                           Book ticket
                       <% end %>
                   <% end %>
               <% end %>
           <% end %>
-      <% end %>
+  <% end %>
 
-    </p>
+  </p>
   </div>
 
   </div>
