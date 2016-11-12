@@ -10,6 +10,7 @@ class Event < ApplicationRecord
     where("title LIKE ? OR category LIKE ? OR text LIKE ? ", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
+  ratyrate_rateable 'visual_effects', 'original_score', 'director', 'custome_design'
 
 
   # Relict from search by date

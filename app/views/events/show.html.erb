@@ -46,7 +46,23 @@
     <br>
 
     <div class="jumbotron">
-      <h2>Comments</h2>
+      <h2>Comments & Ratings</h2>
+
+      Average rating: <%= rating_for @event, "original_score", disable_after_rate: true, imdb_avg: true  %>
+
+      <% if current_user %>
+          <br>
+          Vibes: <%= rating_for @event, "visual_effects", enable_half: true, cancel_place: 'right' %>
+          <br>
+          Location: <%= rating_for @event, "original_score", enable_half: true, cancel_place: 'right' %>
+          <br>
+          Technical equipment: <%= rating_for @event, "original_score", enable_half: true, cancel_place: 'right' %>
+          <br>
+          Internet: <%= rating_for @event, "custome_design", enable_half: true, cancel_place: 'right' %>
+          <br>
+      <% end %>
+      <br>
+
       <%= render @event.comments %>
 
       <% if logged_in? %>
@@ -54,7 +70,10 @@
           <%= render 'comments/form' %>
       <% end %>
 
+
+
     </div>
+
     <div class="jumbotron">
       <p class="lead">
         <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
@@ -69,6 +88,7 @@
 
       </p>
     </div>
+
   </div>
 
 
