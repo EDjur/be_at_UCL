@@ -45,31 +45,35 @@
     </div>
     <br>
 
-    <div class="jumbotron">
-      <h2>Comments & Ratings</h2>
+    <% if !time_surpassed? %>
+        <div class="jumbotron">
 
-      Original: <%= rating_for @event, "overall_score", disable_after_rate: true, imdb_avg: true, cancel_place: 'right' %>
+          <h2>Comments & Ratings</h2>
+
+          Original: <%= rating_for @event, "overall_score", disable_after_rate: true, imdb_avg: true, cancel_place: 'right' %>
 
 
-      <% if logged_in? %>
+          <% if logged_in? %>
+              <br>
+              Vibes: <%= rating_for @event, "vibes", enable_half: true, cancel_place: 'right' %>
+              <br>
+              Location: <%= rating_for @event, "location", enable_half: true, cancel_place: 'right' %>
+              <br>
+              Technical equipment: <%= rating_for @event, "tech_equipment", enable_half: true, cancel_place: 'right' %>
+              <br>
+              Internet: <%= rating_for @event, "internet", enable_half: true, cancel_place: 'right' %>
+              <br>
+          <% end %>
           <br>
-          Vibes: <%= rating_for @event, "vibes", enable_half: true, cancel_place: 'right' %>
-          <br>
-          Location: <%= rating_for @event, "location", enable_half: true, cancel_place: 'right' %>
-          <br>
-          Technical equipment: <%= rating_for @event, "tech_equipment", enable_half: true, cancel_place: 'right' %>
-          <br>
-          Internet: <%= rating_for @event, "internet", enable_half: true, cancel_place: 'right' %>
-          <br>
-      <% end %>
-      <br>
 
-      <%= render @event.comments %>
+          <%= render @event.comments %>
 
-      <% if logged_in? %>
-          <h2>Add a comment:</h2>
-          <%= render 'comments/form' %>
-      <% end %>
+          <% if logged_in? %>
+              <h2>Add a comment:</h2>
+              <%= render 'comments/form' %>
+          <% end %>
+
+    <% end %>
     </div>
     <% if logged_in? %>
         <div class="jumbotron">
