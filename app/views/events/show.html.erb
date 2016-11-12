@@ -12,9 +12,9 @@
 
     <% if flash[:notice] %>
         <div class="jumbotron" style="background-color:greenyellow;">
-            <h2 class="h2-responsive">
-              <div class="notice"><%= flash[:notice] %></div>
-            </h2>
+          <h2 class="h2-responsive">
+            <div class="notice"><%= flash[:notice] %></div>
+          </h2>
         </div>
     <% end %>
 
@@ -70,25 +70,29 @@
           <h2>Add a comment:</h2>
           <%= render 'comments/form' %>
       <% end %>
-      </div>
-
-
     </div>
 
-    <div class="jumbotron">
-      <p class="lead">
-        <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
-            Edit event
-        <% end %>
 
-        <% if logged_in? %>
-            <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
-                Book ticket
-            <% end %>
-        <% end %>
+  </div>
 
-      </p>
-    </div>
+  <div class="jumbotron">
+    <p class="lead">
+      <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
+          Edit event
+      <% end %>
+
+      <% if time_surpassed? %>
+          <% if tickets_left? %>
+              <% if logged_in? %>
+                  <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
+                      Book ticket
+                  <% end %>
+              <% end %>
+          <% end %>
+      <% end %>
+
+    </p>
+  </div>
 
   </div>
 
