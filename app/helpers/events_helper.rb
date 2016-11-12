@@ -13,4 +13,9 @@ module EventsHelper
   def is_host?
     @event.host_user_id == current_user.id
   end
+
+  def progress_bar_width(event)
+    ((event.tickets_sold / (event.available_tickets + event.tickets_sold))*100).round(1)
+  end
+
 end

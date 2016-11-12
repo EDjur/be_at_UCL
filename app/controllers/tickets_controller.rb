@@ -9,7 +9,8 @@ class TicketsController < ApplicationController
     @ticket = @event.tickets.create(ticket_params)
     flash[:notice] = "Hooray! Ticket successfully booked."
     new_available_tickets = @event.available_tickets - 1
-    @event.update(available_tickets: new_available_tickets)
+    new_tickets_sold = @event.tickets_sold + 1
+    @event.update(available_tickets: new_available_tickets, tickets_sold: new_tickets_sold)
     redirect_to event_path(@event)
   end
 

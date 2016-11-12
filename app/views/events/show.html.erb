@@ -73,26 +73,26 @@
               <%= render 'comments/form' %>
           <% end %>
 
+
+        </div>
     <% end %>
-    </div>
     <% if logged_in? %>
         <div class="jumbotron">
-          <p class="lead">
-            <% if is_host? %>
-                <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
-                    Edit event
-                <% end %>
-            <% end %>
+          <% if is_host? %>
+              <%= link_to edit_event_path(@event), :class => "btn btn-primary" do %>
+                  Edit event
+              <% end %>
+          <% end %>
 
-            <% unless has_ticket?(@event) %>
-                <% if time_surpassed? %>
-                    <% if tickets_left? %>
-                        <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
-                            Book ticket
-                        <% end %>
-                    <% end %>
-                <% end %>
-            <% end %>
+          <% unless has_ticket?(@event) %>
+              <% if time_surpassed? %>
+                  <% if tickets_left? %>
+                      <%= link_to event_tickets_path(@event, ticket: {user_id: current_user.id}), :class => "btn btn-primary", method: :post do %>
+                          Book ticket
+                      <% end %>
+                  <% end %>
+              <% end %>
+          <% end %>
     <% end %>
 
     </div>
@@ -100,7 +100,18 @@
     <% if logged_in? %>
         <% if is_host? %>
             <div class="jumbotron">
-              You are host of this event
+              <h2>Progress of ticket sales</h2>
+              <div class="row">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @event.tickets_sold %>" aria-valuemin="0" aria-valuemax="<%= @event.available_tickets + @event.tickets_sold %>" style="min-width: 2em; width: <%= progress_bar_width(@event) %>%;" >
+                    <%= @event.tickets_sold %> (<%= progress_bar_width(@event) %> %)
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                Users coming to your event
+              </div>
             </div>
         <% end %>
     <% end %>
