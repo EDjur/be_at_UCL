@@ -18,4 +18,10 @@ module EventsHelper
     ((event.tickets_sold / (event.available_tickets + event.tickets_sold))*100).round(1)
   end
 
+  def send_emails_if_event_near
+    # Sends email to user when user is created.
+    puts "Background task is running!"
+    ## ExampleMailer.sample_email(@user).deliver_now
+  end
+
 end
