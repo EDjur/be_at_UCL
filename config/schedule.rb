@@ -21,6 +21,6 @@
 set :output, "/cron_log.log"
 set :environment, 'development'
 
-every :hour do # Many shortcuts available: :hour, :day, :month, :year, :reboot
+every 1.minute do # Many shortcuts available: :hour, :day, :month, :year, :reboot
   runner "Event.send_emails_if_event_near"
 end
