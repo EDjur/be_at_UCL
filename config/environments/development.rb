@@ -55,10 +55,10 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :user_name            => 'ucl.comp310p@gmail.com',
-      :password             => 'helloUCL',
+      :address              => Rails.configuration.smtp['SMTP_ADDRESS'],
+      :port                 => Rails.configuration.smtp['SMTP_PORT'],
+      :user_name            => Rails.configuration.smtp['SMTP_USER'],
+      :password             => Rails.configuration.smtp['SMTP_PASSWORD'],
       :authentication       => "plain",
       :enable_starttls_auto => true
   }

@@ -11,29 +11,29 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save # returns false if invalid
-      log_in @user
-      redirect_to events_path
-    else
-      render 'errors'
-    end
-
-    # #send email when user registered
-    # respond_to do |format|
-    #   if @user.save
-    #
-    #     log_in @user
-    #
-    #     # Sends email to user when user is created.
-    #     ExampleMailer.sample_email(@user).deliver_now
-    #
-    #     format.html { redirect_to @user }
-    #     format.json { render :show, status: :created, location: @user }
-    #   else
-    #     format.html { render 'errors' }
-    #     format.json { render json: @user.errors }
-    #   end
+    # if @user.save # returns false if invalid
+    #   log_in @user
+    #   redirect_to events_path
+    # else
+    #   render 'errors'
     # end
+
+    #send email when user registered
+    respond_to do |format|
+      if @user.save
+
+        log_in @user
+
+        # Sends email to user when user is created.
+        ExampleMailer.sample_email(@user).deliver_now
+
+        format.html { redirect_to @user }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render 'errors' }
+        format.json { render json: @user.errors }
+      end
+    end
 
   end
 
