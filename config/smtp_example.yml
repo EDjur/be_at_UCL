@@ -1,4 +1,4 @@
-# Rename this file to "smtp.yml" and replace the credentials below with your own SMTP settings
+# Create a file named "smtp.yml" and replace the credentials below with your own SMTP settings
 production:
   environment: production
   SMTP_USER: your_SMTP_email
