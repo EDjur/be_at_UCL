@@ -19,6 +19,21 @@ module EventsHelper
   end
 
   def send_emails_if_event_near
+
+    my_tickets = Ticket.where(:user_id => current_user.id).select(:event_id).all
+    my_events = []
+    my_tickets.each do |ticket|
+      puts ticket.event_id
+      my_events << Event.where(:id => ticket.event_id).first
+    end
+
+    if my_events[0].start_date.to_date == DateTime.now.to_date-2
+
+      puts "hello"
+
+    end
+
+
     # Sends email to user when user is created.
     puts "Background task is running!"
 
