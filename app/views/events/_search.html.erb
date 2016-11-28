@@ -8,7 +8,7 @@
         <!--Card image-->
         <div class="view overlay hm-white-slight">
           <%= link_to event_path(event) do %>
-              <img src="http://mdbootstrap.com/images/regular/city/img%20(2).jpg" class="img-fluid" alt="">
+              <!--<img src="http://mdbootstrap.com/images/regular/city/img%20(2).jpg" class="img-fluid" alt="">-->
           <% end %>
         </div>
         <!--/.Card image-->
@@ -16,10 +16,10 @@
         <!--Card content-->
         <div class="card-block">
           <!--Title-->
-          <h4 class="card-title"><%= event.title %></h4>
+          <h3 class="card-title"><em><%= event.title %></em></h3>
           <!--Text-->
           <p>Where? <%= event.street %>, <%= event.city %> </p>
-          <p>When? <%= event.start_date %></p>
+          <p>When? <%= event.start_date.to_date %></p>
 
           <%= link_to event_path(event), :class => "btn btn-primary" do %>
               Read more
