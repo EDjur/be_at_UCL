@@ -1,0 +1,25 @@
+<p></p>
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Event Title</th>
+    <th>Event Date</th>
+    <th>Event Page</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% hosting_events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.start_date %></td>
+        <td><%= link_to event_path(event), :class => "btn btn-primary" do %>
+              Details
+          <% end %>
+        </td>
+      </tr>
+
+
+  <% end %>
+  </tbody>
+</table>

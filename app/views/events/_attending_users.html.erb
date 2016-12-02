@@ -12,7 +12,6 @@
   <% attending_guests(@event).each do |user| %>
 
       <tr>
-        <th scope="row">1</th>
         <td><%= user.name %></td>
         <td><%= user.department %></td>
         <td><%= link_to user_path(user), :class => "btn btn-primary" do %>
