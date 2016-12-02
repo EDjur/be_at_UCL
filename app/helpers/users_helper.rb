@@ -15,12 +15,6 @@ module UsersHelper
 
   def hosting_events
     my_events = Event.where(:host_user_id => current_user.id)
-    my_hosting_events = []
-    my_events.each do |event|
-      puts event.title
-      my_hosting_events << event
-    end
-    puts my_events
     return my_events
   end
 end
