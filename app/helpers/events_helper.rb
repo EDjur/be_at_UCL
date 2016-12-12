@@ -29,24 +29,33 @@ module EventsHelper
 
     if my_events[0].start_date.to_date == DateTime.now.to_date-2
 
-      puts "hello"
+      #send email when user is logged in and event is two days away
+      #we experimented with cron jobs and managed to send local emails
+      respond_to do |format|
 
-    end
+        # Sends email to user when user is created.
+        ExampleMailer.sample_email(@user).deliver_now
 
+        format.html { redirect_to @user }
+        format.json { render :show, status: :created, location: @user }
 
-    # Sends email to user when user is created.
-    puts "Background task is running!"
-
-    user = @user.current_user
-
-    respond_to do |format|
-
-      ExampleMailer.sample_email(user).deliver_now
-      format.html { redirect_to user }
-      format.json { render :show, status: :created, location: @user }
-
+      end
     end
 
   end
+
+    #
+    # # Sends email to user when user is created.
+    # puts "Background task is running!"
+    #
+    # user = @user.current_user
+    #
+    # respond_to do |format|
+    #
+    #   ExampleMailer.sample_email(user).deliver_now
+    #   format.html { redirect_to user }
+    #   format.json { render :show, status: :created, location: @user }
+    #
+    # end
 
 end

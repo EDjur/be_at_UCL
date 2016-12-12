@@ -18,23 +18,6 @@ class UsersController < ApplicationController
       render 'errors'
     end
 
-    # #send email when user registered
-    # respond_to do |format|
-    #   if @user.save
-    #
-    #     log_in @user
-    #
-    #     # Sends email to user when user is created.
-    #     ExampleMailer.sample_email(@user).deliver_now
-    #
-    #     format.html { redirect_to @user }
-    #     format.json { render :show, status: :created, location: @user }
-    #   else
-    #     format.html { render 'errors' }
-    #     format.json { render json: @user.errors }
-    #   end
-    # end
-
   end
 
   def show

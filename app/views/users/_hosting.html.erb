@@ -10,6 +10,7 @@
   <tbody>
   <% hosting_events.each do |event| %>
       <tr>
+
         <td><%= event.title %></td>
         <td><%= event.start_date %></td>
         <td><%= link_to event_path(event), :class => "btn btn-primary" do %>
