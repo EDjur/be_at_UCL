@@ -1,0 +1,11 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: Booking at UCL
+  host: Booking-at-UCL
+  disk_quota: 1024M
+  buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
+  command: bundle exec rake db:setup && bundle exec rake assets:precompile && bundle exec rails s -p $PORT
+  timeout: 180
