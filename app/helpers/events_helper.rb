@@ -44,7 +44,6 @@ module EventsHelper
 
   end
 
-
     #
     # # Sends email to user when user is created.
     # puts "Background task is running!"
