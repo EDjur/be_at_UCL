@@ -1,24 +1,6 @@
-# README
+# Be @ UCL - A UCL room booking system.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Framework: Ruby on Rails with an SQLite3 database
+Group project in Web Development
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+See demo here: youtu.be/7YihTQEQq1o
