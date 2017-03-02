@@ -3,4 +3,4 @@
 Framework: Ruby on Rails with an SQLite3 database.<br>
 Group project in Web Development.<br>
 
-See demo here: <a href="youtu.be/7YihTQEQq1o" target="blank">youtu.be/7YihTQEQq1o</a>
+See demo here: <a href="https://www.youtu.be/7YihTQEQq1o" target="_blank">youtu.be/7YihTQEQq1o</a>
